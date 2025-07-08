@@ -1,4 +1,5 @@
 import { useAuth } from "../../features/auth";
+import styles from "./home.module.css";
 
 export function HomePage() {
   const { user, logout } = useAuth();
@@ -8,34 +9,57 @@ export function HomePage() {
   };
 
   return (
-    <div style={{ padding: "2rem", maxWidth: "600px", margin: "0 auto" }}>
-      <header
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          marginBottom: "2rem",
-        }}
-      >
-        <h1>Welcome, {user?.name || "User"}!</h1>
-        <button onClick={handleLogout} style={{ padding: "0.5rem 1rem", cursor: "pointer" }}>
+    <div className={styles.container}>
+      <header className={styles.header}>
+        <div className={styles.logo}>React Form Example</div>
+        <button onClick={handleLogout} className={styles.logoutButton}>
           Logout
         </button>
       </header>
-      <main>
-        <p>You are successfully logged in!</p>
-        <div
-          style={{
-            marginTop: "2rem",
-            padding: "1rem",
-            backgroundColor: "#f5f5f5",
-            borderRadius: "4px",
-          }}
-        >
-          <h3>Protected Content</h3>
-          <p>This content is only visible to authenticated users.</p>
-        </div>
+
+      <main className={styles.main}>
+        <section className={styles.heroSection}>
+          <h1 className={styles.welcomeTitle}>Welcome, {user?.name || "User"}!</h1>
+          <p className={styles.projectDescription}>
+            This is a demonstration of a minimal passwordless authentication form built with React and TypeScript. This
+            project demonstrates a modern, user-friendly authentication approach that eliminates the need for passwords
+            while maintaining security.
+          </p>
+        </section>
+
+        <section className={styles.testDataSection}>
+          <h2 className={styles.testDataTitle}>Testing Information</h2>
+          <p className={styles.testDataDescription}>
+            For testing purposes, the following email addresses will return validation errors:
+          </p>
+
+          <ul className={styles.credentialsList}>
+            <li>error@example.com</li>
+            <li>invalid@test.com</li>
+            <li>fail@demo.com</li>
+          </ul>
+
+          <p className={styles.testDataDescription}>
+            The verification code is always <span className={styles.testDataCode}>123456</span> for all successful email
+            submissions.
+          </p>
+        </section>
       </main>
+
+      <footer className={styles.footer}>
+        <div className={styles.authorInfo}>
+          <span>Created by </span>
+          <span className={styles.authorName}>Evgeniy Podivilov</span>
+        </div>
+        <a
+          href="https://epodivilov.github.io/curriculum-vitae/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.resumeLink}
+        >
+          View Resume & Portfolio
+        </a>
+      </footer>
     </div>
   );
 }

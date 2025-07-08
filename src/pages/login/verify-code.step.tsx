@@ -1,7 +1,7 @@
 import { useAsync } from "../../shared/hooks/use-async";
 import { FormField } from "../../shared/ui/form-field";
 import { Button } from "../../shared/ui/button";
-import { isFieldError, isCommonError, createFieldError, extractFormData } from "../../shared/lib/form";
+import { isFieldError, isCommonError, createFieldError, extractFormData } from "../../shared/lib";
 import styles from "./login.module.css";
 
 interface VerifyCodeStepProps {
@@ -28,7 +28,7 @@ export function VerifyCodeStep({ email, onSubmit, onBack }: VerifyCodeStepProps)
 
   return (
     <div className={styles.container}>
-      <h1>Sign In</h1>
+      <h1 className={styles.title}>Sign In</h1>
       <p className={styles.disclaimer}>
         Enter the code sent to <strong>{email}</strong>.
       </p>

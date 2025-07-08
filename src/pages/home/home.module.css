@@ -1,0 +1,184 @@
+.container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.logoutButton {
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.logoutButton:hover {
+  background-color: #d32f2f;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.heroSection {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.welcomeTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.projectDescription {
+  font-size: 1.2rem;
+  color: #666;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.testDataSection {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  border-left: 4px solid #2196f3;
+}
+
+.testDataTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.testDataDescription {
+  color: #555;
+  line-height: 1.6;
+  margin-block: 0.5rem;
+}
+
+.testCredentials {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+}
+
+.credentialsTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.credentialsList {
+  list-style: none;
+  padding-left: 2rem;
+  margin: 0;
+}
+
+.credentialsList li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.credentialsList li:last-child {
+  border-bottom: none;
+}
+
+.credentialLabel {
+  font-weight: 500;
+  color: #555;
+}
+
+.credentialValue {
+  font-family: "Courier New", monospace;
+  background-color: #f5f5f5;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.9rem;
+}
+
+.footer {
+  margin-top: auto;
+  padding-top: 2rem;
+  border-top: 1px solid #e0e0e0;
+  text-align: center;
+  color: #666;
+}
+
+.authorInfo {
+  margin-bottom: 1rem;
+}
+
+.authorName {
+  font-weight: 600;
+  color: #333;
+}
+
+.resumeLink {
+  color: #2196f3;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.resumeLink:hover {
+  text-decoration: underline;
+}
+
+.testDataCode {
+  font-weight: 600;
+  color: #2196f3;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .welcomeTitle {
+    font-size: 2rem;
+  }
+
+  .projectDescription {
+    font-size: 1.1rem;
+  }
+
+  .testDataSection {
+    padding: 1.5rem;
+  }
+
+  .credentialsList li {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+}

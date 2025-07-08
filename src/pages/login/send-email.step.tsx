@@ -1,7 +1,7 @@
 import { useAsync } from "../../shared/hooks/use-async";
 import { FormField } from "../../shared/ui/form-field";
 import { Button } from "../../shared/ui/button";
-import { isFieldError, isCommonError, createFieldError, extractFormData } from "../../shared/lib/form";
+import { isFieldError, isCommonError, createFieldError, extractFormData } from "../../shared/lib";
 import styles from "./login.module.css";
 
 interface SendEmailStepProps {
@@ -26,10 +26,11 @@ export function SendEmailStep({ onSubmit }: SendEmailStepProps) {
 
   return (
     <div className={styles.container}>
-      <h1>Sign In</h1>
-      <div className={styles.disclaimer}>
-        <p>We'll send a code to your email address. Enter the code to access your account instantly.</p>
-      </div>
+      <h1 className={styles.title}>Sign In</h1>
+      <p className={styles.disclaimer}>
+        We'll send a code to your email address. Enter the code to access your account instantly.
+      </p>
+
       <form onSubmit={execute} onInput={reset} noValidate className={styles.form}>
         <FormField
           label="Email address"
