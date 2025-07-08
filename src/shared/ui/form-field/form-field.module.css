@@ -1,0 +1,17 @@
+.root {
+  display: flex;
+  flex-direction: column;
+}
+
+.error {
+  color: #dc3545;
+  font-size: 0.8rem;
+}
+.error:empty {
+  display: none;
+}
+
+.input {
+  width: 100%;
+  padding: 0.5rem;
+}
